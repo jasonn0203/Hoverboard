@@ -11,7 +11,9 @@ const colorList = [
   "#3FA796",
   "#FEC260",
 ];
-
+const playBtn = $(".button");
+const audio = $("audio");
+var isPlaying = false;
 const randomColor = () => {
   return colorList[Math.floor(Math.random() * colorList.length)];
 };
@@ -33,3 +35,21 @@ box.forEach((element) => {
     removeColor(element);
   };
 });
+
+playBtn.onclick = function () {
+  if (isPlaying) {
+    audio.src = "";
+    audio.pause();
+    playBtn.innerHTML = "Play Music";
+  } else {
+    audio.src = "./theme.mp3";
+    audio.play();
+  }
+};
+audio.onplaying = function () {
+  isPlaying = true;
+  playBtn.innerHTML = "Pause";
+};
+audio.onppause = function () {
+  isPlaying = false;
+};

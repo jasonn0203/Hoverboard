@@ -51,6 +51,19 @@ body {
 .square:hover {
   transition-duration: 0s;
 }
+.button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #fec260;
+  cursor: pointer;
+  font-size: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+.button:hover {
+  opacity: 0.8;
+}
 @media screen and (max-width: 768px) {
   .title {
     font-size: 40px;
